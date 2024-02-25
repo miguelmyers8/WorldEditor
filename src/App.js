@@ -1,23 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
+import ViewPort from './comp/viewPort';
+
+import { useControls } from 'leva'
+
+function MyComponent() {
+  const { name, aNumber,frontImage } = useControls({ 
+    name: 'World', 
+    aNumber: 0, 
+    frontImage:  { image: 'image.jpg' },
+    backImage:   { image: 'image.jpg' },
+    rightImage:  { image: 'image.jpg' }, 
+    leftImage:   { image: 'image.jpg' }, 
+    topImage:    { image: 'image.jpg' }, 
+    bottomImage: { image: 'image.jpg' },
+ 
+  })
+
+  return (
+    <div>
+    </div>
+  )
+}
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MyComponent/>
+      <ViewPort/>
     </div>
   );
 }
